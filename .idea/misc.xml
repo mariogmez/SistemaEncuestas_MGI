@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/activity_gestion_encuestas_adm.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/activity_gestion_usuarios_adm.xml" value="0.36354166666666665" />
         <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/activity_menu_admin.xml" value="0.358695652173913" />
         <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/activity_menu_usuario.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/list_usu.xml" value="0.36354166666666665" />
         <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/rv_target_adm_encuesta.xml" value="0.33" />
         <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/layout/rv_target_adm_usuarios.xml" value="0.358695652173913" />
         <entry key="..\:/Users/mario/Documents/MEGA/Android/SistemaEncuestas_MGI/app/src/main/res/xml/network_security_config.xml" value="0.3625" />

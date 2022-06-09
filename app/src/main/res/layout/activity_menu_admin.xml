@@ -7,7 +7,7 @@
     tools:context=".Administrador.MenuAdminActivity">
 
     <Button
-        android:id="@+id/btnEncuestas"
+        android:id="@+id/btn_gest_encuestas_adm"
         android:layout_width="309dp"
         android:layout_height="79dp"
         android:text="GESTIONAR ENCUESTAS"
@@ -18,7 +18,7 @@
         app:layout_constraintVertical_bias="0.334" />
 
     <Button
-        android:id="@+id/btnUsuarios"
+        android:id="@+id/btn_gest_usuarios_adm"
         android:layout_width="309dp"
         android:layout_height="76dp"
         android:text="GESTIONAR USUARIOS"

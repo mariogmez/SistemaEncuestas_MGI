@@ -6,6 +6,10 @@ import retrofit2.http.Path
 
 interface UserApi {
 
-    @GET("usuario/{name}")
-    fun getUnUsuario(@Path("name") id:String): Call<Usuario>
+    @GET("usuarios/{name}")
+    fun getUsuario(@Path("name") id:String): Call<Usuario>
+
+    @GET("listaUsuarios")
+    fun getListaUsuarios(): Call<MutableList<Usuario>>
+
 }

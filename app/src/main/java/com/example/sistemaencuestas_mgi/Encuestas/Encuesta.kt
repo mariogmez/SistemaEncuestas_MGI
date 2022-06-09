@@ -1,8 +1,9 @@
-package com.example.sistemaencuestas_mgi.Usuario
+package com.example.sistemaencuestas_mgi.Encuestas
+
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Usuario(@SerializedName("idUsuario")
+data class Encuesta(@SerializedName("idUsuario")
                    var idUsuario: String? = null,
 
                    @SerializedName("pwdUsuario")
