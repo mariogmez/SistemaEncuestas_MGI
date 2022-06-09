@@ -3,12 +3,12 @@ package com.example.sistemaencuestas_mgi.Encuestas
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Encuesta(@SerializedName("idUsuario")
-                   var idUsuario: String? = null,
+data class Encuesta(@SerializedName("idEncuesta")
+                   var idEncuesta: Int? = null,
 
-                   @SerializedName("pwdUsuario")
-                   var pwdUsuario: String? = null,
+                   @SerializedName("nomEncuesta")
+                   var nomEncuesta: String? = null,
 
-                   @SerializedName("bolAdmin")
-                   var bolAdmin: Int? = null) : Serializable {
+                   @SerializedName("estadoEncuesta")
+                   var estadoEncuesta: Int? = null) : Serializable {
 }
