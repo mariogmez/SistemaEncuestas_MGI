@@ -3,11 +3,11 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Usuario(@SerializedName("idUsuario")
-                   var idUser: String? = null,
+                   var idUsuario: String? = null,
 
                    @SerializedName("pwdUsuario")
-                   var idRol: String? = null,
+                   var pwdUsuario: String? = null,
 
                    @SerializedName("bolAdmin")
-                   var pass: Int? = null) : Serializable {
+                   var bolAdmin: Int? = null) : Serializable {
 }

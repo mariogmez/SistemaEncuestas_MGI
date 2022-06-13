@@ -1,39 +1,34 @@
-package com.example.sistemaencuestas_mgi.Usuario
+package com.example.sistemaencuestas_mgi.Administrador
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sistemaencuestas_mgi.Adaptadores.AdaptadorRV_eventos_administracion
-import com.example.sistemaencuestas_mgi.Adaptadores.AdaptadorRV_eventos_usuarios
+import com.example.sistemaencuestas_mgi.Adaptadores.AdaptadorRV_usuarios
 import com.example.sistemaencuestas_mgi.Api.ServiceBuilder
 import com.example.sistemaencuestas_mgi.Api.UserApi
 import com.example.sistemaencuestas_mgi.Encuestas.Encuesta
 import com.example.sistemaencuestas_mgi.R
+import com.example.sistemaencuestas_mgi.Usuario.Usuario
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MenuUsuarioActivity : AppCompatActivity() {
+class GestionEncuestasAdmActivity : AppCompatActivity() {
 
     lateinit var recyclerView : RecyclerView
     var encuesta: ArrayList<Encuesta> = ArrayList()
-    val mAdapter : AdaptadorRV_eventos_usuarios = AdaptadorRV_eventos_usuarios()
+    val mAdapter : AdaptadorRV_eventos_administracion = AdaptadorRV_eventos_administracion()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_usuario)
-
-
-        val objIntent: Intent = intent
-        var idUsuario: String? = objIntent.getStringExtra("idUsuario")
-
-        cargarListadoEncuesta (idUsuario)
+        setContentView(R.layout.activity_gestion_encuestas_adm)
+        cargarListadoEncuesta()
     }
 
-    fun cargarListadoEncuesta (idUsuario:String?) {
+    fun cargarListadoEncuesta () {
         val request = ServiceBuilder.buildService(UserApi::class.java)
         val call = request.listaEncuestas()
 
@@ -45,16 +40,16 @@ class MenuUsuarioActivity : AppCompatActivity() {
                     encuesta.add(Encuesta(post.idEncuesta,post.nomEncuesta,post.estadoEncuesta))
                 }
                 if (response.isSuccessful){
-                    recyclerView = findViewById<RecyclerView>(R.id.rv_encuesta_usu)
+                    recyclerView = findViewById<RecyclerView>(R.id.rv_encuesta_adm)
                     recyclerView.setHasFixedSize(true)
-                    recyclerView.layoutManager = LinearLayoutManager(this@MenuUsuarioActivity)
-                    mAdapter.AdaptadorRV_eventos_usuarios(encuesta, this@MenuUsuarioActivity, idUsuario)
+                    recyclerView.layoutManager = LinearLayoutManager(this@GestionEncuestasAdmActivity)
+                    mAdapter.AdaptadorRV_eventos_administracion(encuesta, this@GestionEncuestasAdmActivity)
                     recyclerView.adapter = mAdapter
 
                 }
             }
             override fun onFailure(call: Call<MutableList<Encuesta>>, t: Throwable) {
-                Toast.makeText(this@MenuUsuarioActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@GestionEncuestasAdmActivity, "${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
 

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Usuario.MenuUsuarioActivity">
+    tools:context=".Administrador.GestionEncuestasAdmActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_encuesta_usu"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:id="@+id/rv_encuesta_adm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
