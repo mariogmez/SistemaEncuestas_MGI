@@ -9,9 +9,14 @@ import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sistemaencuestas_mgi.Api.ServiceBuilder
+import com.example.sistemaencuestas_mgi.Api.UserApi
 import com.example.sistemaencuestas_mgi.Encuestas.Encuesta
 import com.example.sistemaencuestas_mgi.R
-
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_eventos_administracion.ViewHolder>(){
 
@@ -56,7 +61,43 @@ class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_even
             pill.setOnClickListener {
                 if (pill.isChecked){
 
+
+                    val request = ServiceBuilder.buildService(UserApi::class.java)
+                    val call = request.activarEncuesta(encuesta)
+                    call.enqueue(object : Callback<ResponseBody> {
+
+                        override fun onResponse(
+                            call: Call<ResponseBody>,
+                            response: Response<ResponseBody>
+                        ) {
+                            if (response.code() == 200) {
+                                Toast.makeText(context, "Estado de la encuesta modificada", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                            Toast.makeText(context, "${t.message}", Toast.LENGTH_LONG).show()
+                        }
+                    })
+
+
                 }else{
+
+                    val request = ServiceBuilder.buildService(UserApi::class.java)
+                    val call = request.desactivarEncuesta(encuesta)
+                    call.enqueue(object : Callback<ResponseBody> {
+
+                        override fun onResponse(
+                            call: Call<ResponseBody>,
+                            response: Response<ResponseBody>
+                        ) {
+                            if (response.code() == 200) {
+                                Toast.makeText(context, "Estado de la encuesta modificada", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                            Toast.makeText(context, "${t.message}", Toast.LENGTH_LONG).show()
+                        }
+                    })
 
                 }
             }

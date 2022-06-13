@@ -9,6 +9,7 @@
     tools:layout_editor_absoluteY="13dp">
 
     <RadioGroup
+        android:id="@+id/rbtGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,25 +20,25 @@
         app:layout_constraintVertical_bias="0.084">
 
         <RadioButton
-            android:id="@+id/radioButton9"
+            android:id="@+id/radio1"
             android:layout_width="117dp"
             android:layout_height="34dp"
             android:text="Sedán" />
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/radio2"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Berlina" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/radio3"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="HatchBack" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/radio4"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="SUV" />
@@ -162,7 +163,7 @@
         app:layout_constraintVertical_bias="0.488" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/cbx3"
         android:layout_width="32dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -197,7 +198,7 @@
         app:layout_constraintVertical_bias="0.488" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/cbx2"
         android:layout_width="32dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -208,7 +209,7 @@
         app:layout_constraintVertical_bias="0.413" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/cbx4"
         android:layout_width="32dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -219,7 +220,7 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/cbx1"
         android:layout_width="32dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -230,8 +231,8 @@
         app:layout_constraintVertical_bias="0.413" />
 
     <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="246dp"
+        android:id="@+id/rtStars"
+        android:layout_width="245dp"
         android:layout_height="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -241,7 +242,7 @@
         app:layout_constraintVertical_bias="0.663" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txtComentario"
         android:layout_width="345dp"
         android:layout_height="38dp"
         android:ems="10"
@@ -255,7 +256,7 @@
         app:layout_constraintVertical_bias="0.823" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
