@@ -48,7 +48,7 @@
             android:layout_weight="0" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnResumenTar"
             android:layout_width="20dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

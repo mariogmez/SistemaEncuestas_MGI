@@ -5,13 +5,16 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sistemaencuestas_mgi.Administrador.EstadisticasEncuestaAdmActivity
 import com.example.sistemaencuestas_mgi.Api.ServiceBuilder
 import com.example.sistemaencuestas_mgi.Api.UserApi
 import com.example.sistemaencuestas_mgi.Encuestas.Encuesta
+import com.example.sistemaencuestas_mgi.Encuestas.EncuestaModelActivity
 import com.example.sistemaencuestas_mgi.R
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -47,6 +50,8 @@ class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_even
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nombreEncuesta =  view.findViewById(R.id.txtNombreEncuesta) as TextView
         val pill = view.findViewById(R.id.pill_encuesta_gest) as Switch
+        var btn = view.findViewById(R.id.btnResumenTar) as Button
+
 
 
         fun bind(encuesta: Encuesta, context: Context, adapter: AdaptadorRV_eventos_administracion) {
@@ -56,6 +61,12 @@ class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_even
             itemView.setOnClickListener(View.OnClickListener {
                 Toast.makeText(context, ""+encuesta.estadoEncuesta, Toast.LENGTH_SHORT).show()
             })
+
+            btn.setOnClickListener {
+                val intent = Intent(context, EstadisticasEncuestaAdmActivity::class.java)
+                intent.putExtra("idEncuesta", encuesta.idEncuesta.toString())
+                itemView.context.startActivity(intent)
+            }
 
 
             pill.setOnClickListener {

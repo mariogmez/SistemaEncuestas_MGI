@@ -1,6 +1,7 @@
 package com.example.sistemaencuestas_mgi.Api
 import com.example.sistemaencuestas_mgi.Encuestas.Encuesta
 import com.example.sistemaencuestas_mgi.Encuestas.Encuesta_usuario
+import com.example.sistemaencuestas_mgi.ObjBBDD.Vehiculos
 import com.example.sistemaencuestas_mgi.Usuario.Usuario
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -16,6 +17,12 @@ interface UserApi {
 
     @GET("listaEncuestas")
     fun listaEncuestas(): Call<MutableList<Encuesta>>
+
+    @GET("listaVehiculos")
+    fun listaVehiculos(): Call<MutableList<Vehiculos>>
+
+    @GET("listaEncuestasUsuarios/{name}")
+    fun listaEncuestasUsuarios(@Path("name") id:String): Call<MutableList<Encuesta_usuario>>
 
     @Headers("Content-Type:application/json")
     @PUT("activarEncuesta")
