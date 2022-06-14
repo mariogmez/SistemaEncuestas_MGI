@@ -4,28 +4,22 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.get
-import com.example.sistemaencuestas_mgi.Administrador.MenuAdminActivity
 import com.example.sistemaencuestas_mgi.Api.ServiceBuilder
 import com.example.sistemaencuestas_mgi.Api.UserApi
 import com.example.sistemaencuestas_mgi.R
-import com.example.sistemaencuestas_mgi.Usuario.MenuUsuarioActivity
-import com.example.sistemaencuestas_mgi.Usuario.Usuario
 import kotlinx.android.synthetic.main.activity_encuesta_model.*
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File.separator
 
 class EncuestaModelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_encuesta_model)
+        supportActionBar?.hide()
 
         val objIntent: Intent = intent
         var idUsuario: String? = objIntent.getStringExtra("idUsuario")
@@ -148,11 +142,11 @@ class EncuestaModelActivity : AppCompatActivity() {
 
     fun comprobar_rbtn(): Int {
         var tipo = 0
-        when (rbtGroup.checkedRadioButtonId) {
-            R.id.radio1 -> tipo = 1
-            R.id.radio2 -> tipo = 2
-            R.id.radio3 -> tipo = 3
-            R.id.radio4 -> tipo = 4
+        when (rbtGroup_adm.checkedRadioButtonId) {
+            R.id.radio1_adm -> tipo = 1
+            R.id.radio2_adm -> tipo = 2
+            R.id.radio3_adm -> tipo = 3
+            R.id.radio4_adm -> tipo = 4
         }
         return tipo
     }

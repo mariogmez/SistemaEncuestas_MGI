@@ -12,6 +12,12 @@ class MenuAdminActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_admin)
 
 
+        val objIntent: Intent = intent
+        var idUsuario: String? = objIntent.getStringExtra("idUsuario")
+        supportActionBar?.title = "Bienvenido " + idUsuario
+
+
+
         btn_gest_encuestas_adm.setOnClickListener {
             var intent = Intent(applicationContext, GestionEncuestasAdmActivity::class.java)
             startActivity(intent)

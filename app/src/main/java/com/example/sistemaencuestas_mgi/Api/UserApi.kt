@@ -47,4 +47,7 @@ interface UserApi {
     @PUT("modificarEncuesta")
     fun modificarEncuesta(@Body info: Encuesta_usuario) : Call<ResponseBody>
 
+    @DELETE("delEncuesta/{id}")
+    fun delEncuesta(@Path("id") id:Int) : Call<ResponseBody>
+
 }

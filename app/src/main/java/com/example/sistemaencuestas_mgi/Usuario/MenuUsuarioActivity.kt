@@ -29,6 +29,9 @@ class MenuUsuarioActivity : AppCompatActivity() {
 
         val objIntent: Intent = intent
         var idUsuario: String? = objIntent.getStringExtra("idUsuario")
+        supportActionBar?.title = "Bienvenido " + idUsuario
+
+
 
         cargarListadoEncuesta (idUsuario)
     }

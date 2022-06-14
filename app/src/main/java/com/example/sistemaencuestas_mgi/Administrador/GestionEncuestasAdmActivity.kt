@@ -26,6 +26,7 @@ class GestionEncuestasAdmActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestion_encuestas_adm)
         cargarListadoEncuesta()
+        supportActionBar?.title = "Gestion de las encuestas"
     }
 
     fun cargarListadoEncuesta () {

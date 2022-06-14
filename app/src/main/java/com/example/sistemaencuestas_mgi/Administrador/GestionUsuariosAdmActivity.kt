@@ -32,7 +32,7 @@ class GestionUsuariosAdmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestion_usuarios_adm)
-
+        supportActionBar?.title = "Gestion de los usuarios"
         cargarListadoUsuarios()
 
         // MUESTRA UN DIALOG MODIFICADO PARA AÑADIR NUEVOS EVENTOS

@@ -27,7 +27,7 @@ class EstadisticasEncuestaAdmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas_encuesta_adm)
-
+        supportActionBar?.hide()
         val objIntent: Intent = intent
         var idEncuesta: String? = objIntent.getStringExtra("idEncuesta")
         if (idEncuesta != null) {
