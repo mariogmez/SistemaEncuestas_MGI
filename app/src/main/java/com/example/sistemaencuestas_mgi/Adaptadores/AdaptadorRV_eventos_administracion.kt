@@ -2,6 +2,7 @@ package com.example.sistemaencuestas_mgi.Adaptadores
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sistemaencuestas_mgi.Administrador.AnalizadorEncuestasAdmActivity
 import com.example.sistemaencuestas_mgi.Administrador.EstadisticasEncuestaAdmActivity
 import com.example.sistemaencuestas_mgi.Api.ServiceBuilder
 import com.example.sistemaencuestas_mgi.Api.UserApi
@@ -51,6 +53,7 @@ class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_even
         val nombreEncuesta =  view.findViewById(R.id.txtNombreEncuesta) as TextView
         val pill = view.findViewById(R.id.pill_encuesta_gest) as Switch
         var btn = view.findViewById(R.id.btnResumenTar) as Button
+        var btnDelete = view.findViewById(R.id.btnReset) as Button
 
 
 
@@ -59,13 +62,23 @@ class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_even
             pill.isChecked = encuesta.estadoEncuesta == 1
 
             itemView.setOnClickListener(View.OnClickListener {
-                Toast.makeText(context, ""+encuesta.estadoEncuesta, Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, AnalizadorEncuestasAdmActivity::class.java)
+                intent.putExtra("idEncuesta", encuesta.idEncuesta.toString())
+                itemView.context.startActivity(intent)
             })
 
             btn.setOnClickListener {
                 val intent = Intent(context, EstadisticasEncuestaAdmActivity::class.java)
                 intent.putExtra("idEncuesta", encuesta.idEncuesta.toString())
                 itemView.context.startActivity(intent)
+            }
+
+            btnDelete.setOnClickListener {
+                Toast.makeText(context, "sisis simba", Toast.LENGTH_SHORT).show()
+                var id:Int = encuesta.idEncuesta!!
+                borrarPorID(id, context)
+
+
             }
 
 
@@ -116,5 +129,24 @@ class AdaptadorRV_eventos_administracion : RecyclerView.Adapter<AdaptadorRV_even
 
         }
 
+        private fun borrarPorID(id:Int, context: Context) {
+            val request = ServiceBuilder.buildService(UserApi::class.java)
+            val call = request.delEncuesta(id)
+            call.enqueue(object : Callback<ResponseBody> {
+
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+
+                    if (response.isSuccessful){ //Esto es otra forma de hacerlo en lugar de mirar el código.
+                        Toast.makeText(context, "Registro eliminado con éxito",Toast.LENGTH_SHORT).show()
+                    }
+                }
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.e("Fernando","Algo ha fallado en la conexión.")
+                    Toast.makeText(context, "Algo ha fallado en la conexión.",Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+
     }
+
 }

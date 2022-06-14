@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="13dp">
 
     <RadioGroup
-        android:id="@+id/rbtGroup"
+        android:id="@+id/rbtGroup_adm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,25 +20,25 @@
         app:layout_constraintVertical_bias="0.084">
 
         <RadioButton
-            android:id="@+id/radio1"
+            android:id="@+id/radio1_adm"
             android:layout_width="117dp"
             android:layout_height="34dp"
             android:text="Sedán" />
 
         <RadioButton
-            android:id="@+id/radio2"
+            android:id="@+id/radio2_adm"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Berlina" />
 
         <RadioButton
-            android:id="@+id/radio3"
+            android:id="@+id/radio3_adm"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="HatchBack" />
 
         <RadioButton
-            android:id="@+id/radio4"
+            android:id="@+id/radio4_adm"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="SUV" />
@@ -247,7 +247,7 @@
         android:layout_height="38dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textSize="8sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
